@@ -1,0 +1,71 @@
+---
+import Branding from './Branding.astro'
+const navItems = [
+  {
+    id:1,
+    title:'Restaurant',
+    href:'#restaurant'
+  },
+  {
+    id:2,
+    title:'Speisekarte',
+    href:'#speisekarte',
+  },
+  {
+    id:3,
+    title:'Bereiche',
+    href:'#bereiche'
+  },
+  {
+    id:4,
+    title:'Lieferservice',
+    href:'#lieferservice'
+  },
+  {
+    id:5,
+    title:'Anfahrt',
+    href:'#anfahrt'
+  }
+];
+
+---
+<nav class="py-2 px-4 bg-white dark:bg-slate-900 duration-300">
+  <div class="container mx-auto flex flex-row items-center justify-between">
+    <Branding />
+    <ul class="flex-row items-center space-x-4 h-full hidden lg:flex">
+      {navItems.map(item => (
+        <li class="cursor-pointer group"><a href={item.href} class="inline-block text-amber-700 dark:text-slate-400 font-secondary font-bold group-hover:text-amber-900 dark:group-hover:text-gray-900 group-hover:bg-amber-100 dark:group-hover:bg-slate-100 duration-300 rounded-lg px-2 py-1">{item.title}</a></li>
+      ))}
+      <li class="cursor-pointer group"><button class="inline-block text-slate-700 dark:text-slate-400 font-secondary font-bold group-hover:text-slate-900 dark:group-hover:text-gray-900 group-hover:bg-amber-100 dark:group-hover:bg-slate-100 duration-300 rounded-lg px-2 py-1"><img src="/images/theme.png" class="w-[32px] h-[32px]" aria-label="Theme Button" onclick="setDarkmode()" /></button></li>
+    </ul>
+    <ul class="flex-row items-center space-x-4 h-full flex lg:hidden">
+      <li class="cursor-pointer group"><button class="w-[48px] h-[40px] inline-block text-slate-700 dark:text-slate-400 font-secondary font-bold group-hover:text-slate-900 dark:group-hover:text-gray-900 group-hover:bg-amber-100 dark:group-hover:bg-slate-100 duration-300 rounded-lg px-2 py-1"> <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    class="w-[24px] h-[24px] fill-current text-amber-700 group-hover:text-amber-900 dark:text-slate-50 dark:group-hover:text-gray-900 mx-auto"
+  >
+    <rect y={11} width={24} height={2} rx={1} />
+    <rect y={4} width={24} height={2} rx={1} />
+    <rect y={18} width={24} height={2} rx={1} />
+  </svg>
+</button></li>
+      <li class="cursor-pointer group"><button class="inline-block text-slate-700 dark:text-slate-400 font-secondary font-bold group-hover:text-slate-900 dark:group-hover:text-gray-900 group-hover:bg-amber-100 dark:group-hover:bg-slate-100 duration-300 rounded-lg px-2 py-1"><img src="/images/theme.png" class="w-[32px] h-[32px]" aria-label="Theme Button" onclick="setDarkmode()" /></button></li>
+    </ul>
+  </div>
+</nav>
+
+<script is:inline>
+  function setDarkmode() {
+	if (document.documentElement.classList.contains('dark')) {
+		document.documentElement.classList.remove('dark')
+		document.documentElement.classList.add('light')
+	} else {
+		document.documentElement.classList.remove('light')
+		document.documentElement.classList.add('dark')
+	}
+  }
+
+  function toggleNavbar() {
+    alert("Toggled Navbar")
+  }
+</script>
