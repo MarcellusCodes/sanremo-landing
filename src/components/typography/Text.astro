@@ -1,0 +1,8 @@
+---
+export interface Props {
+    styles: string,
+}
+const {styles} = Astro.props;
+---
+
+<p class={`text-blueGray dark:text-slate-400 font-secondary ${styles} text-lg`}><slot /></p>

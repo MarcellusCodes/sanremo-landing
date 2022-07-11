@@ -1,6 +1,12 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Section from '../components/Section.astro';
+import PrimaryLink from '../components/links/PrimaryLink.astro';
+import SecondaryLink from '../components/links/SecondaryLink.astro';
+import Heading from '../components/typography/Heading.astro';
+import Text from '../components/typography/Text.astro';
+import Title from '../components/typography/Title.astro';
+import Badge from '../components/Badge.astro';
 ---
 <Layout title="Welcome to San Remo.">
 	<header class="h-[300px] z-20 w-full py-4 bg-[url('/images/san-remo.jpg')] bg-local bg-no-repeat bg-cover bg-center relative after:content-[''] after:absolute after:top-0 after:left-0 after:w-full after:h-full after:bg-black after:bg-opacity-25">
@@ -10,25 +16,23 @@ import Section from '../components/Section.astro';
     <Section>
       <div class="flex flex-col lg:flex-row items-center">
           <div class="flex flex-col items-start space-y-4 w-full lg:w-1/2 relative z-10">
-            
           <div class="flex flex-row items-center space-x-4 z-20">
-            <h1 class="text-6xl text-amber-600 dark:text-slate-50 font-bold font-primary">San Remo</h1>
-            <span class="font-secondary text-amber-900 uppercase text-md bg-amber-100 rounded-full px-2 py-1 dark:text-slate-900 dark:bg-slate-100">Seit 1996</span>
+            <Title>San Remo</Title>
+            <Badge>Seit 1996</Badge>
           </div>
-          <h2 class=" font-secondary text-black dark:text-blueGray text-5xl">Italienische Spezialitäten</h2>
-          <p class="text-blueGray dark:text-slate-400 font-secondary max-w-[700px] text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, et? Eius voluptas doloribus quae delectus impedit, odit hic mollitia incidunt consequatur minus totam amet. Delectus quasi nemo dolorem, reprehenderit quis labore at harum iusto provident adipisci sit qui rerum debitis eligendi cum perspiciatis!</p>
+          <Heading>Italienische Spezialitäten</Heading>
+          <Text styles="max-w-[700px]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, et? Eius voluptas doloribus quae delectus impedit, odit hic mollitia incidunt consequatur minus totam amet. Delectus quasi nemo dolorem, reprehenderit quis labore at harum iusto provident adipisci sit qui rerum debitis eligendi cum perspiciatis!</Text>
           <div class="py-2"></div>
           <div class="space-x-4">
-            <a href="#speisekarte" class="inline-block px-4 py-2 rounded-full ring-2 ring-amber-200 dark:text-slate-400 dark:hover:text-slate-900 hover:bg-amber-100 duration-300 active:ring-amber-300 text-slate-900 font-primary text-xl">Speisekarte</a>
-            <a href="#speisekarte" class="inline-block px-4 py-2 rounded-full ring-2 ring-transparent bg-amber-200 hover:bg-amber-300 duration-300 active:bg-amber-500 text-slate-900 font-primary text-xl">Bestellen</a>
+            <SecondaryLink href="#speisekarte">Speisekarte</SecondaryLink>
+            <PrimaryLink href="#lieferservice">Bestellen</PrimaryLink>
           </div>
         </div>
         <div class="w-full lg:w-1/2 h-full relative -mt-28 sm:-mt-0">
           <img src="/images/intro-illustration.svg" alt="Background Illustration" class="w-[700px] h-[700px] z-0 dark:opacity-50">
-          <img src="/images/intro-food.jpg" alt="Intro Food" class="w-[492px] h-[305px] rounded-md absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-xl dark:shadow-none">
+          <img src="/images/intro-food.jpg" alt="Intro Food" class="w-[492px] h-[305px] rounded-md absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 shadow-xl dark:shadow-none object-cover">
         </div>
       </div>
-      
     </Section>
   </main>
 </Layout>
