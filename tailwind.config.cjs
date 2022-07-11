@@ -8,6 +8,9 @@ module.exports = {
         primary: ["Lato", "sans-serif"],
         secondary: ["Martel Sans", "sans-serif"],
       },
+      colors: {
+        blueGray: "#a9adc1",
+      },
     },
   },
   plugins: [],
